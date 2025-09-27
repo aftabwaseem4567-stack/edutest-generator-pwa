@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTest Generator - AI-Powered Test Creation</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Create professional educational tests instantly by uploading a Word reference format and PDF content. AI-powered question generation for educators.">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="EduTest Generator">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="msapplication-TileImage" content="icons/icon-144x144.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="icons/icon.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+    
+    <!-- Fonts and Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>EduTest Generator</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#demo" class="nav-link">Demo</a>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#upload" class="nav-link">Create Test</a>
+                <a href="#demo" class="nav-link">Demo</a></nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Create Professional Tests Instantly</h2>
+                <p class="hero-subtitle">Upload a reference Word file for format and a PDF for content. Our AI will generate matching test questions automatically.</p>
+                <a href="#upload" class="cta-button">
+                    <i class="fas fa-rocket"></i>
+                    Start Creating Tests
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <h3>Upload Reference Format</h3>
+                    <p>Upload a Word document that shows the format and structure you want for your test (MCQs, short questions, etc.)</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Add Content Source</h3>
+                    <p>Upload a PDF containing the chapter or material from which test questions should be generated</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Generation</h3>
+                    <p>Our AI analyzes both files and generates test questions that match your format using the provided content</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Export & Use</h3>
+                    <p>Download your generated test in Word format or view it directly in the browser</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2 class="section-title">Create Your Test</h2>
+            <div class="upload-container">
+                <div class="upload-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Upload Reference Format</h3>
+                            <p>Choose a Word document that shows the test format you want</p>
+                            <div class="file-upload-area" id="wordUpload">
+                                <i class="fas fa-file-word"></i>
+                                <p>Drop Word file here or <span class="browse-link">browse</span></p>
+                                <input type="file" accept=".doc,.docx" id="wordFile" hidden>
+                                <div class="file-info" id="wordFileInfo" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Upload Content Source</h3>
+                            <p>Choose a PDF containing the chapter/material for question generation</p>
+                            <div class="file-upload-area" id="pdfUpload">
+                                <i class="fas fa-file-pdf"></i>
+                                <p>Drop PDF file here or <span class="browse-link">browse</span></p>
+                                <input type="file" accept=".pdf" id="pdfFile" hidden>
+                                <div class="file-info" id="pdfFileInfo" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Generate Test</h3>
+                            <p>Configure your test settings and let AI create your questions</p>
+                            <div class="generation-controls">
+                                <div class="control-group">
+                                    <label for="testTitle">Test Title:</label>
+                                    <input type="text" id="testTitle" placeholder="Enter test title...">
+                                </div>
+                                <div class="control-group">
+                                    <label for="difficulty">Difficulty Level:</label>
+                                    <select id="difficulty">
+                                        <option value="easy">Easy</option>
+                                        <option value="medium" selected>Medium</option>
+                                        <option value="hard">Hard</option>
+                                    </select>
+                                </div>
+                                <button class="generate-btn" id="generateBtn" disabled>
+                                    <i class="fas fa-cogs"></i>
+                                    Generate Test
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Generated Test</h2>
+            <div class="results-container">
+                <div class="results-header">
+                    <div class="test-info">
+                        <h3 id="generatedTestTitle">Sample Test</h3>
+                        <p id="generatedTestMeta">Generated from your uploaded files</p>
+                    </div>
+                    <div class="results-actions">
+                        <button class="action-btn secondary" id="editBtn">
+                            <i class="fas fa-edit"></i>
+                            Edit
+                        </button>
+                        <button class="action-btn primary" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+                <div class="test-preview" id="testPreview">
+                    <!-- Generated test content will appear here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Try the Demo</h2>
+            <p class="demo-subtitle">See how the system works with sample files</p>
+            <div class="demo-buttons">
+                <button class="demo-btn" id="demoMCQ">
+                    <i class="fas fa-list-ul"></i>
+                    Demo: MCQ Format
+                </button>
+                <button class="demo-btn" id="demoShort">
+                    <i class="fas fa-align-left"></i>
+                    Demo: Short Questions
+                </button>
+                <button class="demo-btn" id="demoMixed">
+                    <i class="fas fa-layer-group"></i>
+                    Demo: Mixed Format
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loadingModal" style="display: none;">
+        <div class="modal-content">
+            <div class="loading-spinner">
+                <i class="fas fa-cog fa-spin"></i>
+            </div>
+            <h3>Generating Your Test...</h3>
+            <p id="loadingText">Analyzing reference format...</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EduTest Generator</h3>
+                    <p>AI-powered test creation for educators</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Smart Format Detection</li>
+                        <li>AI Question Generation</li>
+                        <li>Multiple Export Options</li>
+                        <li>Easy to Use Interface</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Coming Soon</h4>
+                    <ul>
+                        <li>Mobile App</li>
+                        <li>Advanced Templates</li>
+                        <li>Collaboration Tools</li>
+                        <li>Question Bank</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EduTest Generator. Prototype Version.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PWA Install Banner -->
+    <div class="pwa-install-banner" id="pwaInstallBanner" style="display: none;">
+        <div class="pwa-install-content">
+            <div class="pwa-install-info">
+                <i class="fas fa-mobile-alt"></i>
+                <div>
+                    <h4>Install EduTest Generator</h4>
+                    <p>Get the app experience with offline access</p>
+                </div>
+            </div>
+            <div class="pwa-install-actions">
+                <button class="pwa-install-btn" id="pwaInstallBtn">Install</button>
+                <button class="pwa-dismiss-btn" id="pwaDismissBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    console.log('SW registered: ', registration);
+                } catch (registrationError) {
+                    console.log('SW registration failed: ', registrationError);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

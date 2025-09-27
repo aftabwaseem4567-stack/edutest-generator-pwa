@@ -1,0 +1,82 @@
+{
+  "name": "EduTest Generator - AI-Powered Test Creation",
+  "short_name": "EduTest Generator",
+  "description": "Create professional educational tests instantly by uploading a Word reference format and PDF content. AI-powered question generation for educators.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#667eea",
+  "background_color": "#f8fafc",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "512x512", 
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop-1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "EduTest Generator main interface"
+    },
+    {
+      "src": "screenshots/mobile-1.png",
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile test creation interface"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Create New Test",
+      "short_name": "New Test",
+      "description": "Start creating a new test immediately",
+      "url": "/#upload",
+      "icons": [
+        {
+          "src": "icons/shortcut-new.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Try Demo",
+      "short_name": "Demo",
+      "description": "See the app in action with demo content",
+      "url": "/#demo",
+      "icons": [
+        {
+          "src": "icons/shortcut-demo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "edutest-generator-pwa",
+  "version": "1.0.0",
+  "description": "AI-Powered Educational Test Generator - Progressive Web App that creates professional tests from Word reference formats and PDF content",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -c-1",
+    "dev": "npx http-server . -p 3000 -c-1 -o",
+    "build": "echo 'Static PWA - No build step required'",
+    "test": "echo 'Tests coming soon'",
+    "deploy": "echo 'Deploy to GitHub Pages via repository settings'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR-USERNAME/edutest-generator-pwa.git"
+  },
+  "keywords": [
+    "pwa",
+    "education",
+    "test-generator",
+    "ai",
+    "mobile-app",
+    "offline",
+    "responsive",
+    "javascript",
+    "service-worker",
+    "manifest"
+  ],
+  "author": "EduTest Generator Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YOUR-USERNAME/edutest-generator-pwa/issues"
+  },
+  "homepage": "https://YOUR-USERNAME.github.io/edutest-generator-pwa/",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "pwa": {
+    "name": "EduTest Generator",
+    "short_name": "EduTest",
+    "theme_color": "#667eea",
+    "background_color": "#f8fafc",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
