@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="102.4" ry="102.4" fill="url(#bg-gradient)"/>
+  
+  <!-- Graduation Cap Icon -->
+  <g transform="translate(256,256)">
+    <!-- Cap base -->
+    <path d="M-120,-40 L120,-40 L100,-20 L-100,-20 Z" fill="white" opacity="0.9"/>
+    
+    <!-- Cap top -->
+    <ellipse cx="0" cy="-50" rx="140" ry="25" fill="white"/>
+    
+    <!-- Tassel -->
+    <line x1="120" y1="-45" x2="140" y2="-10" stroke="white" stroke-width="4"/>
+    <circle cx="140" cy="-10" r="8" fill="white"/>
+    
+    <!-- Book/Document -->
+    <rect x="-40" y="20" width="80" height="60" rx="8" fill="white" opacity="0.8"/>
+    <line x1="-25" y1="35" x2="25" y2="35" stroke="#667eea" stroke-width="3"/>
+    <line x1="-25" y1="50" x2="25" y2="50" stroke="#667eea" stroke-width="3"/>
+    <line x1="-25" y1="65" x2="15" y2="65" stroke="#667eea" stroke-width="3"/>
+  </g>
+</svg>
